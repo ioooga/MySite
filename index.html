@@ -679,6 +679,47 @@ footer{
   font-weight:500;
 }
 
+/* もっと見るボタン */
+.yt-more-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin:28px auto 0;
+  padding:14px 32px;
+  background:var(--dark);
+  color:var(--white);
+  border:none;
+  border-radius:999px;
+  font-family:var(--f-round);
+  font-size:0.88rem;
+  font-weight:700;
+  letter-spacing:0.08em;
+  cursor:pointer;
+  transition:background 0.2s,transform 0.15s;
+}
+.yt-more-btn:hover{background:#333;transform:translateY(-2px)}
+.yt-more-btn:active{transform:scale(0.97)}
+.yt-more-icon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:22px;height:22px;
+  background:var(--y);
+  border-radius:50%;
+  flex-shrink:0;
+  transition:transform 0.3s cubic-bezier(.22,.68,0,1.5);
+}
+.yt-more-icon svg{
+  width:10px;height:10px;
+  stroke:var(--dark);
+  fill:none;
+  stroke-width:2.5;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.yt-more-btn.open .yt-more-icon{transform:rotate(180deg)}
+
 /* iframe表示後 */
 .yt-item iframe{
   display:block;
@@ -932,7 +973,7 @@ footer{
     <div class="works-pane active" id="tab-mv">
       <div class="yt-grid">
 
-        <div class="yt-item" data-id="vnRgJ5dJ4ac">
+        <div class="yt-item" data-index="1" data-id="vnRgJ5dJ4ac">
           <div class="yt-thumb" onclick="playYT(this)">
             <img src="https://img.youtube.com/vi/vnRgJ5dJ4ac/mqdefault.jpg" alt="" loading="lazy">
             <div class="yt-play">
@@ -943,7 +984,7 @@ footer{
           </div>
           <iframe loading="lazy" allowfullscreen allow="autoplay" title=""></iframe>
         </div>
-        <div class="yt-item" data-id="x3EzWzCH9LU">
+        <div class="yt-item" data-index="2" data-id="x3EzWzCH9LU">
           <div class="yt-thumb" onclick="playYT(this)">
             <img src="https://img.youtube.com/vi/x3EzWzCH9LU/mqdefault.jpg" alt="" loading="lazy">
             <div class="yt-play">
@@ -954,7 +995,7 @@ footer{
           </div>
           <iframe loading="lazy" allowfullscreen allow="autoplay" title=""></iframe>
         </div>
-        <div class="yt-item" data-id="7ld0am7aALo">
+        <div class="yt-item" data-index="3" data-id="7ld0am7aALo">
           <div class="yt-thumb" onclick="playYT(this)">
             <img src="https://img.youtube.com/vi/7ld0am7aALo/mqdefault.jpg" alt="" loading="lazy">
             <div class="yt-play">
@@ -965,7 +1006,7 @@ footer{
           </div>
           <iframe loading="lazy" allowfullscreen allow="autoplay" title=""></iframe>
         </div>
-        <div class="yt-item" data-id="wv87qn-cVic">
+        <div class="yt-item" data-index="4" data-id="wv87qn-cVic">
           <div class="yt-thumb" onclick="playYT(this)">
             <img src="https://img.youtube.com/vi/wv87qn-cVic/mqdefault.jpg" alt="" loading="lazy">
             <div class="yt-play">
@@ -976,7 +1017,7 @@ footer{
           </div>
           <iframe loading="lazy" allowfullscreen allow="autoplay" title=""></iframe>
         </div>
-        <div class="yt-item" data-id="aFQsc_GGtjM">
+        <div class="yt-item" data-index="5" data-id="aFQsc_GGtjM">
           <div class="yt-thumb" onclick="playYT(this)">
             <img src="https://img.youtube.com/vi/aFQsc_GGtjM/mqdefault.jpg" alt="" loading="lazy">
             <div class="yt-play">
@@ -987,7 +1028,7 @@ footer{
           </div>
           <iframe loading="lazy" allowfullscreen allow="autoplay" title=""></iframe>
         </div>
-        <div class="yt-item" data-id="t5vTqUXkh94">
+        <div class="yt-item" data-index="6" data-id="t5vTqUXkh94">
           <div class="yt-thumb" onclick="playYT(this)">
             <img src="https://img.youtube.com/vi/t5vTqUXkh94/mqdefault.jpg" alt="" loading="lazy">
             <div class="yt-play">
@@ -998,7 +1039,7 @@ footer{
           </div>
           <iframe loading="lazy" allowfullscreen allow="autoplay" title=""></iframe>
         </div>
-        <div class="yt-item" data-id="T1h-ykyfqFA">
+        <div class="yt-item" data-index="7" data-id="T1h-ykyfqFA">
           <div class="yt-thumb" onclick="playYT(this)">
             <img src="https://img.youtube.com/vi/T1h-ykyfqFA/mqdefault.jpg" alt="" loading="lazy">
             <div class="yt-play">
@@ -1009,7 +1050,7 @@ footer{
           </div>
           <iframe loading="lazy" allowfullscreen allow="autoplay" title=""></iframe>
         </div>
-        <div class="yt-item" data-id="kn_pqbLIwwo">
+        <div class="yt-item" data-index="8" data-id="kn_pqbLIwwo">
           <div class="yt-thumb" onclick="playYT(this)">
             <img src="https://img.youtube.com/vi/kn_pqbLIwwo/mqdefault.jpg" alt="" loading="lazy">
             <div class="yt-play">
@@ -1020,7 +1061,7 @@ footer{
           </div>
           <iframe loading="lazy" allowfullscreen allow="autoplay" title=""></iframe>
         </div>
-        <div class="yt-item" data-id="-R66mpimcjs">
+        <div class="yt-item" data-index="9" data-id="-R66mpimcjs">
           <div class="yt-thumb" onclick="playYT(this)">
             <img src="https://img.youtube.com/vi/-R66mpimcjs/mqdefault.jpg" alt="" loading="lazy">
             <div class="yt-play">
@@ -1031,7 +1072,7 @@ footer{
           </div>
           <iframe loading="lazy" allowfullscreen allow="autoplay" title=""></iframe>
         </div>
-        <div class="yt-item" data-id="_t94b-qwaYo">
+        <div class="yt-item" data-index="10" data-id="_t94b-qwaYo">
           <div class="yt-thumb" onclick="playYT(this)">
             <img src="https://img.youtube.com/vi/_t94b-qwaYo/mqdefault.jpg" alt="" loading="lazy">
             <div class="yt-play">
@@ -1042,7 +1083,7 @@ footer{
           </div>
           <iframe loading="lazy" allowfullscreen allow="autoplay" title=""></iframe>
         </div>
-        <div class="yt-item" data-id="VI-m8Wt9mWY">
+        <div class="yt-item" data-index="11" data-id="VI-m8Wt9mWY">
           <div class="yt-thumb" onclick="playYT(this)">
             <img src="https://img.youtube.com/vi/VI-m8Wt9mWY/mqdefault.jpg" alt="" loading="lazy">
             <div class="yt-play">
@@ -1053,7 +1094,7 @@ footer{
           </div>
           <iframe loading="lazy" allowfullscreen allow="autoplay" title=""></iframe>
         </div>
-        <div class="yt-item" data-id="2bCBQa85tlY">
+        <div class="yt-item" data-index="12" data-id="2bCBQa85tlY">
           <div class="yt-thumb" onclick="playYT(this)">
             <img src="https://img.youtube.com/vi/2bCBQa85tlY/mqdefault.jpg" alt="" loading="lazy">
             <div class="yt-play">
@@ -1064,7 +1105,7 @@ footer{
           </div>
           <iframe loading="lazy" allowfullscreen allow="autoplay" title=""></iframe>
         </div>
-        <div class="yt-item" data-id="CYZfhj-LDRk">
+        <div class="yt-item" data-index="13" data-id="CYZfhj-LDRk">
           <div class="yt-thumb" onclick="playYT(this)">
             <img src="https://img.youtube.com/vi/CYZfhj-LDRk/mqdefault.jpg" alt="" loading="lazy">
             <div class="yt-play">
@@ -1075,7 +1116,7 @@ footer{
           </div>
           <iframe loading="lazy" allowfullscreen allow="autoplay" title=""></iframe>
         </div>
-        <div class="yt-item" data-id="PrNDkNlNxp4">
+        <div class="yt-item" data-index="14" data-id="PrNDkNlNxp4">
           <div class="yt-thumb" onclick="playYT(this)">
             <img src="https://img.youtube.com/vi/PrNDkNlNxp4/mqdefault.jpg" alt="" loading="lazy">
             <div class="yt-play">
@@ -1086,7 +1127,7 @@ footer{
           </div>
           <iframe loading="lazy" allowfullscreen allow="autoplay" title=""></iframe>
         </div>
-        <div class="yt-item" data-id="8hZvsfIzv4c">
+        <div class="yt-item" data-index="15" data-id="8hZvsfIzv4c">
           <div class="yt-thumb" onclick="playYT(this)">
             <img src="https://img.youtube.com/vi/8hZvsfIzv4c/mqdefault.jpg" alt="" loading="lazy">
             <div class="yt-play">
@@ -1097,7 +1138,7 @@ footer{
           </div>
           <iframe loading="lazy" allowfullscreen allow="autoplay" title=""></iframe>
         </div>
-        <div class="yt-item" data-id="WPEDMlSQ-yY">
+        <div class="yt-item" data-index="16" data-id="WPEDMlSQ-yY">
           <div class="yt-thumb" onclick="playYT(this)">
             <img src="https://img.youtube.com/vi/WPEDMlSQ-yY/mqdefault.jpg" alt="" loading="lazy">
             <div class="yt-play">
@@ -1108,7 +1149,7 @@ footer{
           </div>
           <iframe loading="lazy" allowfullscreen allow="autoplay" title=""></iframe>
         </div>
-        <div class="yt-item" data-id="5bN66doR404">
+        <div class="yt-item" data-index="17" data-id="5bN66doR404">
           <div class="yt-thumb" onclick="playYT(this)">
             <img src="https://img.youtube.com/vi/5bN66doR404/mqdefault.jpg" alt="" loading="lazy">
             <div class="yt-play">
@@ -1119,7 +1160,7 @@ footer{
           </div>
           <iframe loading="lazy" allowfullscreen allow="autoplay" title=""></iframe>
         </div>
-        <div class="yt-item" data-id="K7hgF36AW3A">
+        <div class="yt-item" data-index="18" data-id="K7hgF36AW3A">
           <div class="yt-thumb" onclick="playYT(this)">
             <img src="https://img.youtube.com/vi/K7hgF36AW3A/mqdefault.jpg" alt="" loading="lazy">
             <div class="yt-play">
@@ -1130,7 +1171,7 @@ footer{
           </div>
           <iframe loading="lazy" allowfullscreen allow="autoplay" title=""></iframe>
         </div>
-        <div class="yt-item" data-id="1GBUaZP17N4">
+        <div class="yt-item" data-index="19" data-id="1GBUaZP17N4">
           <div class="yt-thumb" onclick="playYT(this)">
             <img src="https://img.youtube.com/vi/1GBUaZP17N4/mqdefault.jpg" alt="" loading="lazy">
             <div class="yt-play">
@@ -1141,7 +1182,7 @@ footer{
           </div>
           <iframe loading="lazy" allowfullscreen allow="autoplay" title=""></iframe>
         </div>
-        <div class="yt-item" data-id="gT6rxu38NSI">
+        <div class="yt-item" data-index="20" data-id="gT6rxu38NSI">
           <div class="yt-thumb" onclick="playYT(this)">
             <img src="https://img.youtube.com/vi/gT6rxu38NSI/mqdefault.jpg" alt="" loading="lazy">
             <div class="yt-play">
@@ -1152,7 +1193,7 @@ footer{
           </div>
           <iframe loading="lazy" allowfullscreen allow="autoplay" title=""></iframe>
         </div>
-        <div class="yt-item" data-id="4n4HN3a4eDI">
+        <div class="yt-item" data-index="21" data-id="4n4HN3a4eDI">
           <div class="yt-thumb" onclick="playYT(this)">
             <img src="https://img.youtube.com/vi/4n4HN3a4eDI/mqdefault.jpg" alt="" loading="lazy">
             <div class="yt-play">
@@ -1163,7 +1204,7 @@ footer{
           </div>
           <iframe loading="lazy" allowfullscreen allow="autoplay" title=""></iframe>
         </div>
-        <div class="yt-item" data-id="ZjPa8lGYUds">
+        <div class="yt-item" data-index="22" data-id="ZjPa8lGYUds">
           <div class="yt-thumb" onclick="playYT(this)">
             <img src="https://img.youtube.com/vi/ZjPa8lGYUds/mqdefault.jpg" alt="" loading="lazy">
             <div class="yt-play">
@@ -1174,7 +1215,7 @@ footer{
           </div>
           <iframe loading="lazy" allowfullscreen allow="autoplay" title=""></iframe>
         </div>
-        <div class="yt-item" data-id="TIgzokEpTio">
+        <div class="yt-item" data-index="23" data-id="TIgzokEpTio">
           <div class="yt-thumb" onclick="playYT(this)">
             <img src="https://img.youtube.com/vi/TIgzokEpTio/mqdefault.jpg" alt="" loading="lazy">
             <div class="yt-play">
@@ -1185,7 +1226,7 @@ footer{
           </div>
           <iframe loading="lazy" allowfullscreen allow="autoplay" title=""></iframe>
         </div>
-        <div class="yt-item" data-id="1pkrZYIJZnA">
+        <div class="yt-item" data-index="24" data-id="1pkrZYIJZnA">
           <div class="yt-thumb" onclick="playYT(this)">
             <img src="https://img.youtube.com/vi/1pkrZYIJZnA/mqdefault.jpg" alt="" loading="lazy">
             <div class="yt-play">
@@ -1196,7 +1237,7 @@ footer{
           </div>
           <iframe loading="lazy" allowfullscreen allow="autoplay" title=""></iframe>
         </div>
-        <div class="yt-item" data-id="8Z_agBHVLKA">
+        <div class="yt-item" data-index="25" data-id="8Z_agBHVLKA">
           <div class="yt-thumb" onclick="playYT(this)">
             <img src="https://img.youtube.com/vi/8Z_agBHVLKA/mqdefault.jpg" alt="" loading="lazy">
             <div class="yt-play">
@@ -1207,7 +1248,7 @@ footer{
           </div>
           <iframe loading="lazy" allowfullscreen allow="autoplay" title=""></iframe>
         </div>
-        <div class="yt-item" data-id="dFyX6qYqVk8">
+        <div class="yt-item" data-index="26" data-id="dFyX6qYqVk8">
           <div class="yt-thumb" onclick="playYT(this)">
             <img src="https://img.youtube.com/vi/dFyX6qYqVk8/mqdefault.jpg" alt="" loading="lazy">
             <div class="yt-play">
@@ -1218,7 +1259,7 @@ footer{
           </div>
           <iframe loading="lazy" allowfullscreen allow="autoplay" title=""></iframe>
         </div>
-        <div class="yt-item" data-id="s6OF-HQ_EWE">
+        <div class="yt-item" data-index="27" data-id="s6OF-HQ_EWE">
           <div class="yt-thumb" onclick="playYT(this)">
             <img src="https://img.youtube.com/vi/s6OF-HQ_EWE/mqdefault.jpg" alt="" loading="lazy">
             <div class="yt-play">
@@ -1230,6 +1271,13 @@ footer{
           <iframe loading="lazy" allowfullscreen allow="autoplay" title=""></iframe>
         </div>
         </div>
+
+      <button class="yt-more-btn" id="ytMoreBtn" onclick="toggleYT()">
+        もっと見る
+        <span class="yt-more-icon">
+          <svg viewBox="0 0 10 10"><path d="M2 3l3 4 3-4"/></svg>
+        </span>
+      </button>
 
     </div>
 
@@ -1358,6 +1406,46 @@ document.querySelectorAll('.works-tab-btn').forEach(btn=>{
 });
 
 // YouTube クリック再生
+// 初期表示制御
+function initYT(){
+  const isMobile = window.innerWidth < 600;
+  const showCount = isMobile ? 3 : 6;
+  document.querySelectorAll('.yt-item[data-index]').forEach(el=>{
+    const idx = parseInt(el.dataset.index);
+    el.style.display = idx <= showCount ? 'block' : 'none';
+  });
+  const total = document.querySelectorAll('.yt-item[data-index]').length;
+  const btn = document.getElementById('ytMoreBtn');
+  if(btn) btn.style.display = total > showCount ? 'block' : 'none';
+}
+
+function toggleYT(){
+  const btn = document.getElementById('ytMoreBtn');
+  const isOpen = btn.classList.contains('open');
+  const isMobile = window.innerWidth < 600;
+  const showCount = isMobile ? 3 : 6;
+  if(isOpen){
+    document.querySelectorAll('.yt-item[data-index]').forEach(el=>{
+      const idx = parseInt(el.dataset.index);
+      if(idx > showCount) el.style.display = 'none';
+    });
+    btn.classList.remove('open');
+    btn.innerHTML = 'もっと見る <span class="yt-more-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M2 3l3 4 3-4"/></svg></span>';
+    document.getElementById('works').scrollIntoView({behavior:'smooth'});
+  } else {
+    document.querySelectorAll('.yt-item[data-index]').forEach(el=>{
+      const idx = parseInt(el.dataset.index);
+      if(idx > showCount) el.style.display = 'block';
+    });
+    btn.classList.add('open');
+    btn.innerHTML = '閉じる <span class="yt-more-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M2 7l3-4 3 4"/></svg></span>';
+  }
+  // openの時はアイコン回転CSSで対応済み
+}
+
+window.addEventListener('DOMContentLoaded', initYT);
+window.addEventListener('resize', initYT);
+
 function playYT(thumb){
   const item=thumb.closest('.yt-item');
   const id=item.dataset.id;
