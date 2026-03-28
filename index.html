@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>千賀 未来 | ホームページ・映像・デザイン・AI</title>
+<title>千賀未来 | ホームページ・映像・デザイン・AI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -523,8 +523,6 @@ footer{
   .web-grid{grid-template-columns:repeat(3,1fr)}
   .yt-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .contact-card{padding:48px 40px}
-  .contact-links{flex-direction:row}
-  .contact-link{flex:1;justify-content:center}
 }
 
 @media(min-width:900px){
@@ -534,6 +532,42 @@ footer{
   .tl-item{grid-template-columns:80px 28px 1fr}
   .contact-section .section-inner{max-width:600px}
 }
+
+/* =========================================
+   BACK TO TOP
+========================================= */
+.back-to-top{
+  position:fixed;
+  bottom:28px;
+  right:20px;
+  width:44px;height:44px;
+  background:var(--dark);
+  border:none;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  opacity:0;
+  transform:translateY(12px);
+  transition:opacity 0.3s,transform 0.3s,background 0.2s;
+  pointer-events:none;
+  z-index:100;
+}
+.back-to-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+.back-to-top:hover{background:#333}
+.back-to-top svg{width:16px;height:16px;stroke:var(--white);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.back-to-top::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  border-radius:50%;
+  border:2px solid var(--y);
+  opacity:0;
+  transform:scale(0.8);
+  transition:opacity 0.2s,transform 0.2s;
+}
+.back-to-top:hover::after{opacity:1;transform:scale(1)}
 </style>
 </head>
 <body>
@@ -981,11 +1015,22 @@ footer{
           </span>
           1000gamirai@gmail.com
         </a>
+
+        <a href="https://lin.ee/9FieNeU" target="_blank" rel="noopener noreferrer" class="contact-link">
+          <span class="contact-link-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5C21 16.75 13.5 22 12 22S3 16.75 3 11.5C3 6.81 7.03 3 12 3s9 3.81 9 8.5z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg>
+          </span>
+          LINE で友だち追加
+        </a>
       </div>
     </div>
   </div>
 </section>
 
+
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="トップへ戻る">
+  <svg viewBox="0 0 16 16"><path d="M8 13V3M3 7l5-5 5 5"/></svg>
+</button>
 <footer>
   <p>© 2026 千賀 未来 All Rights Reserved.</p>
 </footer>
@@ -1053,6 +1098,12 @@ function playYT(thumb) {
 
 window.addEventListener('DOMContentLoaded', initYT);
 window.addEventListener('resize', initYT);
+
+// トップへ戻るボタン
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  backToTop.classList.toggle('visible', window.scrollY > 300);
+}, { passive: true });
 </script>
 </body>
 </html>
